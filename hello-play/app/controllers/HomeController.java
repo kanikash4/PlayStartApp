@@ -1,6 +1,9 @@
 package controllers;
 
 import play.mvc.*;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import play.libs.Json;
+
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -17,5 +20,12 @@ public class HomeController extends Controller {
     public Result index() {
         return ok(views.html.index.render());
     }
+
+    public Result welcomeUser(){
+        ObjectNode objectNode = Json.newObject();
+       objectNode.put("Name","My Name");
+       return ok(Json.toJson(objectNode));
+    }
+
 
 }
