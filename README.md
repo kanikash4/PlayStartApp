@@ -1,4 +1,4 @@
-# hello-playFramework
+# PlayStartApp
 
 ## Template created using sbt ##
 
