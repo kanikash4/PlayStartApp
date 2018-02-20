@@ -6,7 +6,6 @@ import com.mongodb.MongoClient;
 import com.typesafe.config.ConfigFactory;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
-import org.mongodb.morphia.ValidationExtension;
 
 @Singleton
 public class PlayMorphia {
@@ -15,6 +14,7 @@ public class PlayMorphia {
     private Datastore datastore;
 
     public PlayMorphia() {
+        System.out.println("PlayMorphia Constructor");
         this.morphia = new Morphia();
         MongoClient mongoClient = new MongoClient(ConfigFactory.load().getString("mongodb.host"), ConfigFactory.load().getInt("mongodb.port"));
         this.datastore = morphia.createDatastore(mongoClient, ConfigFactory.load().getString("mongodb.database"));
@@ -30,6 +30,9 @@ public class PlayMorphia {
     }
 
     public Datastore getDatastore() {
+        if(this.datastore == null)
+            return new PlayMorphia().datastore;
+        else
         return datastore;
     }
 
