@@ -8,3 +8,5 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 scalaVersion := "2.12.4"
 
 libraryDependencies += guice
+// https://mvnrepository.com/artifact/org.mongodb.morphia/morphia
+libraryDependencies += "org.mongodb.morphia" % "morphia" % "1.3.2"
