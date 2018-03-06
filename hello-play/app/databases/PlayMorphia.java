@@ -2,10 +2,14 @@ package databases;
 
 import com.google.inject.Singleton;
 
+import play.Configuration;
+
 import com.mongodb.MongoClient;
 import com.typesafe.config.ConfigFactory;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
+import com.google.inject.Provider;
+
 
 @Singleton
 public class PlayMorphia {
