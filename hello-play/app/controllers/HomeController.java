@@ -45,13 +45,32 @@ public HomeController(Datastore dataStore){
        return ok(Json.toJson(objectNode));
     }
 
-    public Result addData() {
-           JsonNode request = request().body().asJson();
-           addDataModel b = Json.fromJson(request,addDataModel.class);
-            // addDataModel b= new addDataModel();
-            // b.setProdName("hRLLO");
-           Key<addDataModel> keys = dataStore.save(b);
-        return ok(Json.toJson(keys));
+    public Result addData() throws IOException {
+      ObjectNode objectNode = Json.newObject();
+      JsonNode request = request().body().asJson();
+      models.addDataModel data = Json.fromJson(json, models.addDataModel.class);
+      Result result = upsertData(data);
+        if (result!= null){
+            return result;
+        }
+        objectNode.put("status", "success");
+        objectNode.put("message", "data added successfully");
+        return play.mvc.Results.ok(objectNode);
+    }
+
+    private Result upsertData(addDataModel data){
+
+        try {
+            prodCategoryServices.upsertCategory(category);
+        } catch (RuntimeException re) {
+            logger.error("Unable to generate promo codes: cause: {}", re.getMessage());
+            System.out.println("Run Time Exception");
+            return badAsJSON();
+        } catch (Exception e) {
+            logger.error("Error while generating promo codes: cause: {}", e.getMessage());
+            return errorAsJSON();
+        }
+        return null;
     }
 
 
