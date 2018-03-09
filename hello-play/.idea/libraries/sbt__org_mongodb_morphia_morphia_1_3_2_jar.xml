@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.mongodb.morphia:morphia:1.3.2:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.mongodb.morphia/morphia/jars/morphia-1.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.mongodb.morphia/morphia/srcs/morphia-1.3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

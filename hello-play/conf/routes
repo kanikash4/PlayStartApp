@@ -11,3 +11,5 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 # Testing with the routes
 GET     /welcome 			controllers.HomeController.welcomeUser
 POST    /addData 			controllers.HomeController.addData
+
+POST    /image/uploadImage  controllers.ImageController.uploadImage
