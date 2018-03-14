@@ -3,13 +3,13 @@
 # ~~~~
 
 # An example controller showing a sample home page
-GET     /                           controllers.HomeController.index
+GET     /                           @controllers.HomeController.index
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+GET     /assets/*file               @controllers.Assets.versioned(path="/public", file: Asset)
 
 # Testing with the routes
-GET     /welcome 			controllers.HomeController.welcomeUser
-POST    /addData 			controllers.HomeController.addData
+GET     /welcome 			@controllers.HomeController.welcomeUser()
+POST    /addData 			@controllers.HomeController.addData()
 
 #POST    /image/uploadImage  controllers.ImageController.uploadImage

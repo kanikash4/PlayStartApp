@@ -25,9 +25,9 @@ public class demoModule extends AbstractModule{
     }*/
     @Override
 	protected void configure(){
-		PlayMorphia p = new PlayMorphia();
-        System.out.println(p.getDatastore().toString());
-		bind(Datastore.class).toInstance(p.getDatastore());
+//		PlayMorphia p = new PlayMorphia();
+//        System.out.println(p.getDatastore().toString());
+//		bind(Datastore.class).toInstance(p.getDatastore());
 	}
 
 }
