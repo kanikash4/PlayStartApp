@@ -13,3 +13,5 @@ GET     /welcome 			@controllers.HomeController.welcomeUser()
 POST    /addData 			@controllers.HomeController.addData()
 
 #POST    /image/uploadImage  controllers.ImageController.uploadImage
+
+POST    /addContacts            @controllers.ContactsController.addContact()
